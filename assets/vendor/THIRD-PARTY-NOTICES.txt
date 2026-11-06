@@ -1,0 +1,2 @@
+Three.js 0.187.0: MIT license, see three-LICENSE.txt. https://threejs.org/
+GSAP 3.15.1: Copyright GreenSock / Webflow. Distribution retains original license header. https://gsap.com/standard-license/
