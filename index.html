@@ -1,4 +1,25 @@
-<!doctype html><html data-theme="light"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html data-theme="light"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<!-- EVA-0 Cut E favicon: browser preference, independent of page theme. -->
+<link id="eva0-favicon-ico" rel="icon" type="image/x-icon" sizes="16x16 32x32 48x48 256x256" href="favicon-cut-e-light-v2.ico">
+<link id="eva0-favicon-svg" rel="icon" type="image/svg+xml" sizes="any" href="favicon-cut-e-light-v2.svg">
+<script id="eva0-favicon-theme">
+(function(){
+  var icons={"light":{"svg":"favicon-cut-e-light-v2.svg","ico":"favicon-cut-e-light-v2.ico"},"dark":{"svg":"favicon-cut-e-dark-v2.svg","ico":"favicon-cut-e-dark-v2.ico"}};
+  var preference=window.matchMedia?window.matchMedia('(prefers-color-scheme: dark)'):null;
+  function syncFavicon(){
+    var scheme=preference&&preference.matches?'dark':'light';
+    ['ico','svg'].forEach(function(format){
+      var link=document.getElementById('eva0-favicon-'+format);
+      if(link.getAttribute('href')!==icons[scheme][format])link.setAttribute('href',icons[scheme][format]);
+      link.setAttribute('data-scheme',scheme);
+    });
+  }
+  syncFavicon();
+  if(preference){if(preference.addEventListener)preference.addEventListener('change',syncFavicon);else if(preference.addListener)preference.addListener(syncFavicon);}
+  window.addEventListener('pageshow',syncFavicon);
+})();
+</script>
+</head><body>
 <title>EVA-0</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="EVA-0: Test-Time Model Evolution with Only Two Forward Passes per Sample (NeurIPS 2026)">
