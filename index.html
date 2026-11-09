@@ -3105,4 +3105,19 @@ try{var s=localStorage.getItem('eva0-theme');if(s==='dark'||s==='light')d.setAtt
 function sync(){var k=d.getAttribute('data-theme')==='dark';b.setAttribute('aria-label',k?'Switch to light mode':'Switch to dark mode');b.setAttribute('aria-pressed',k?'true':'false');}
 sync();b.addEventListener('click',function(){var n=d.getAttribute('data-theme')==='dark'?'light':'dark';d.setAttribute('data-theme',n);try{localStorage.setItem('eva0-theme',n);}catch(e){}sync();});})();
 </script>
+
+<!-- Cloudflare Web Analytics: private dashboard, production only. -->
+<script id="eva0-web-analytics">
+(function () {
+  // Count only the published project, excluding local files and previews.
+  if (location.protocol !== 'https:' || location.hostname !== 'cascol-chen.github.io' ||
+      !/^\/EVA-0-project-page(?:\/|$)/.test(location.pathname)) return;
+  if (document.querySelector('script[data-cf-beacon]')) return;
+  var beacon = document.createElement('script');
+  beacon.type = 'module';
+  beacon.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+  beacon.setAttribute('data-cf-beacon', JSON.stringify({token: 'ab40c38744cc49d38f900c73974aef2b'}));
+  document.body.appendChild(beacon);
+})();
+</script>
 </body></html>
